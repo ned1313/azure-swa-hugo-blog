@@ -36,15 +36,3 @@ variable "custom_domain_name" {
   type        = string
   description = "(Required) The domain you'll be using for the SWA"
 }
-
-# TXT or CNAME validation
-variable "custom_domain_validation" {
-  type        = string
-  description = "(Optional) How you want to validate your domain name (CNAME or TXT). Defaults to TXT."
-  default     = "TXT"
-
-  validation {
-    condition     = contains(["CNAME", "TXT"], var.custom_domain_validation)
-    error_message = "The validation type must be either CNAME or TXT."
-  }
-}

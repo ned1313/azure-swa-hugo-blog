@@ -30,19 +30,7 @@ resource "azurerm_static_site" "swa" {
   tags                = var.common_tags
 }
 
-resource "azurerm_static_site_custom_domain" "cname" {
-  count           = (var.custom_domain_validation == "CNAME") ? 1 : 0
-  static_site_id  = azurerm_static_site.swa.id
-  domain_name     = var.website_name
-  validation_type = "cname-delegation"
-
-  depends_on = [
-    azurerm_dns_cname_record.cname
-  ]
-}
-
 resource "azurerm_static_site_custom_domain" "txt" {
-  count           = (var.custom_domain_validation == "TXT") ? 1 : 0
   static_site_id  = azurerm_static_site.swa.id
   domain_name     = var.website_name
   validation_type = "dns-txt-token"
@@ -57,28 +45,18 @@ resource "azurerm_dns_zone" "swa" {
 
 }
 
-resource "azurerm_dns_cname_record" "cname" {
-  count               = (var.custom_domain_validation == "CNAME") ? 1 : 0
-  name                = local.hostname
-  zone_name           = azurerm_dns_zone.swa.name
-  resource_group_name = azurerm_resource_group.swa.name
-  ttl                 = 300
-  record              = azurerm_static_site.swa.default_host_name
-}
-
 resource "azurerm_dns_txt_record" "txt" {
-  count               = (var.custom_domain_validation == "TXT") ? 1 : 0
   name                = local.hostname
   zone_name           = azurerm_dns_zone.swa.name
   resource_group_name = azurerm_resource_group.swa.name
   ttl                 = 300
   record {
-    value = azurerm_static_site_custom_domain.txt[0].validation_token
+    # Conditional required due to issue https://github.com/hashicorp/terraform-provider-azurerm/issues/14750
+    value = azurerm_static_site_custom_domain.txt.validation_token == "" ? "validated" : azurerm_static_site_custom_domain.txt.validation_token
   }
 }
 
 resource "azurerm_dns_a_record" "alias" {
-  count               = (var.custom_domain_validation == "TXT") ? 1 : 0
   name                = local.hostname
   zone_name           = azurerm_dns_zone.swa.name
   resource_group_name = azurerm_resource_group.swa.name
