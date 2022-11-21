@@ -1,6 +1,6 @@
 baseURL = 'https://10bitpodcast.com/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = '10 Bit Podcast'
 theme = 'beautifulhugo'
 
 DefaultContentLanguage = "en"
