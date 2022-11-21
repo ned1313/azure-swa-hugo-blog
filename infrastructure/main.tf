@@ -35,6 +35,10 @@ resource "azurerm_static_site_custom_domain" "cname" {
   static_site_id  = azurerm_static_site.swa.id
   domain_name     = var.website_name
   validation_type = "cname-delegation"
+
+  depends_on = [
+    azurerm_dns_cname_record.cname
+  ]
 }
 
 resource "azurerm_static_site_custom_domain" "txt" {
@@ -55,7 +59,7 @@ resource "azurerm_dns_zone" "swa" {
 
 resource "azurerm_dns_cname_record" "cname" {
   count               = (var.custom_domain_validation == "CNAME") ? 1 : 0
-  name                = var.website_name
+  name                = local.hostname
   zone_name           = azurerm_dns_zone.swa.name
   resource_group_name = azurerm_resource_group.swa.name
   ttl                 = 300
@@ -64,7 +68,7 @@ resource "azurerm_dns_cname_record" "cname" {
 
 resource "azurerm_dns_txt_record" "txt" {
   count               = (var.custom_domain_validation == "TXT") ? 1 : 0
-  name                = "@"
+  name                = local.hostname
   zone_name           = azurerm_dns_zone.swa.name
   resource_group_name = azurerm_resource_group.swa.name
   ttl                 = 300
@@ -74,6 +78,7 @@ resource "azurerm_dns_txt_record" "txt" {
 }
 
 resource "azurerm_dns_a_record" "alias" {
+  count               = (var.custom_domain_validation == "TXT") ? 1 : 0
   name                = local.hostname
   zone_name           = azurerm_dns_zone.swa.name
   resource_group_name = azurerm_resource_group.swa.name
