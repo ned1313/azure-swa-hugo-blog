@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://10bitpodcast.com/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'beautifulhugo'
