@@ -1,4 +1,4 @@
-baseURL = 'https://10bitpodcast.com/'
+baseURL = 'http://blog.azure.sedawk.ninja'
 languageCode = 'en-us'
-title = '10 Bit Podcast'
+title = 'Sed? Awk? Ninja!'
 theme = 'ananke'
