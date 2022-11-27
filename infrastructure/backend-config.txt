@@ -1,4 +1,3 @@
-resource_group_name="10bitpodcastcomtfdata"
-storage_account_name="10bitpodcastcomtfdata"
+resource_group_name="azuresedawkninjatfdata"
+storage_account_name="azuresedawkninjatfdata"
 container_name="tfdata"
-
