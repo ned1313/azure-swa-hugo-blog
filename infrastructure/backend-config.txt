@@ -1,4 +1,4 @@
-resource_group_name="10bitpodcastcomtfdata"
-storage_account_name="10bitpodcastcomtfdata"
-container_name="tfdata"
+resource_group_name="rg-tfstate"
+storage_account_name="smithdavidaiatfstate01"
+container_name="swatfstate"
 
