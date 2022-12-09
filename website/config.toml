@@ -1,4 +1,4 @@
-baseURL = 'https://10bitpodcast.com/'
+baseURL = 'https://static1.thedevopscat.co.uk/'
 languageCode = 'en-us'
-title = '10 Bit Podcast'
+title = 'My First Static Website'
 theme = 'ananke'
