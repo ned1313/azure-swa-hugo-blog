@@ -39,7 +39,7 @@ disqusShortname = ""
   enable_mathjax    = false
 
   # Enable / Disable algolia search
-  algolia_search    = true
+  algolia_search    = false
   algolia_appId     = "45CEN6X6AT"
   algolia_apiKey    = "16030625f1a4d0dd3b8aefd794fd4cf1"
   algolia_indexName = "bilberry-hugo-theme"
@@ -80,7 +80,7 @@ disqusShortname = ""
 
   # Header configuration
     # your subtitle if you want to use any
-    subtitle = "Hello World! This is the most epic subtitle ever."
+    subtitle = "The devopscat goes on an static website adventure..."
 
     # if you want to use libravatar or gravatar for the header image
     avatarEmail = "code@lednerb.de"
@@ -166,10 +166,6 @@ disqusShortname = ""
 [Languages]
   [Languages.en]
     weight = 1
-  [Languages.de]
-    weight = 2
-    title = "Mein cooler neuer Blog"
-    subtitle = "Hallo Welt! Dies ist der epischste Untertitel aller Zeiten."
 
 # don't change anything below
 [taxonomies]
