@@ -1,3 +1,4 @@
-[submodule "website/themes/ananke"]
-	path = website/themes/ananke
-	url = https://github.com/theNewDynamic/gohugo-theme-ananke
+[submodule "website/themes/bilberry-hugo-theme"]
+	path = website/themes/bilberry-hugo-theme
+	url = https://github.com/Lednerb/bilberry-hugo-theme
+
