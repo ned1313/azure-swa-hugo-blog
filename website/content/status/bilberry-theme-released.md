@@ -5,4 +5,4 @@ icon: "fa-rocket"
 showDate: true
 ---
 I'm glad to announce the release of my new blog. 
-The focus here will be around DevOps best practices and observations and maybe the odd link to cat videos!
+The focus here will be around DevOps best practices, observations and maybe the odd link to cat videos!
