@@ -1,0 +1,90 @@
+{{ if .Site.Params.showFooter | default true }}
+<footer>
+    <div class="container">
+
+        {{ if gt (.Site.Params.amountLatestPostsInFooter | default 7) 0 }}
+        <div class="recent-posts">
+            <strong>{{ i18n "latestPosts" }}</strong>
+            <ul>
+                {{ $dontRender :=  (slice "page" "quote" "link" "status") }}
+                {{ range (first (.Site.Params.amountLatestPostsInFooter | default 7) (where (where .Site.Pages.ByPublishDate.Reverse ".Kind" "page") ".Type" "not in" $dontRender )) }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        {{ if and .Site.Taxonomies.categories (gt ( .Site.Params.amountCategoriesInFooter | default 7 ) 0 ) }}
+        <div class="categories">
+            <a href="{{ "/categories/" | relLangURL }}"><strong>{{ i18n "categories" }}</strong></a>
+            <ul>
+                {{ range $order, $taxonomy := (first ( .Site.Params.amountCategoriesInFooter | default 7 ) .Site.Taxonomies.categories.ByCount) }}
+                <li>
+                    <a href="{{ (print "/categories/" ($taxonomy.Name | urlize)) | relLangURL }}">{{ $taxonomy.Name | humanize }}
+                        ({{ $taxonomy.Count }})</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        <div class="right">
+            {{ if .Site.Params.showSocialMedia | default true }}
+            <div class="external-profiles">
+                <strong>{{ i18n "socialMedia" }}</strong>
+
+                {{ range .Site.Params.socialMediaLinks }}
+                <a href="{{ .link }}" target="_blank" rel="{{ .rel }}"><em class="{{ .icon }}"></em></a>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if and (.Site.Params.showFooterLanguageChooser | default true) (gt .Site.Languages 1) }}
+            {{- $.Scratch.Set "language" .Language -}}
+            <div class="languages">
+                <strong>{{ i18n "otherLanguages" }}</strong>
+                {{ range $.Site.Home.AllTranslations }}
+                {{ if eq ($.Scratch.Get "language") .Language }}
+                <a href="{{ .Permalink }}" class="active">{{ .Language }}</a>
+                {{ else }}
+                <a href="{{ .Permalink }}">{{ .Language }}</a>
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Site.Params.showArchive | default true }}
+            <div class="archive">
+                <a href="{{ "/archive/" | relLangURL }}"><strong>{{ i18n "archive" }}</strong></a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</footer>
+{{ end }}
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="{{ .Site.Params.copyrightUrl | default "https://github.com/Lednerb" }}" target="_blank">
+                &copy;
+                {{ if .Site.Params.copyrightUseCurrentYear }}
+                {{ now.Year }}
+                {{ else }}
+                {{ .Site.Params.copyrightYearOverride | default 2018 }}
+                {{ end }}
+                {{ .Site.Params.copyrightBy | default "by Lednerb" }}
+            </a>
+            {{ with  .OutputFormats.Get "rss" -}}
+            -
+            <a href="{{ .Permalink }}">{{ .Name }}</a>
+            {{- end }}
+        </div>
+        <div class="author">
+            <a href="{{ .Site.Params.creditsUrl | default "https://github.com/Lednerb/bilberry-hugo-theme" }}"
+                target="_blank">{{ .Site.Params.creditsText | default "Bilberry Hugo Theme" }}</a>
+        </div>
+    </div>
+</div>
