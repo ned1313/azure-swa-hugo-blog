@@ -1,10 +1,7 @@
 title = "Static1 Blog Website"
 baseURL = "https://static1.thedevopscat.co.uk/"
 
-# Option 1 (recommended): adding the theme as a Hugo module
-# theme = "github.com/Lednerb/bilberry-hugo-theme/v3"
-
-# Option 2: cloning/copying the theme files
+# cloning/copying the theme files
 theme = "bilberry-hugo-theme"
 
 # Generate the robots.txt file for SEO
@@ -42,7 +39,7 @@ disqusShortname = ""
   algolia_search    = true
   algolia_appId     = "45CEN6X6AT"
   algolia_apiKey    = "16030625f1a4d0dd3b8aefd794fd4cf1"
-  algolia_indexName = "static1"
+  algolia_indexName = "bilberry-hugo-theme"
   # Set this option to false if you want to search within all articles in all languages at once
   algolia_currentLanguageOnly = true
 
