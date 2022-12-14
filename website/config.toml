@@ -1,4 +1,4 @@
-title = "Static1 Blog Website"
+title = "thedevopscat Blog site"
 baseURL = "https://static1.thedevopscat.co.uk/"
 
 # cloning/copying the theme files
@@ -19,15 +19,14 @@ disqusShortname = ""
 [params]
   # Custom CSS / JS modules that will be imported by the template.
   # Files are relative to the static/ directory or a URL.
-  # Files are imported in the order they appear here, after
-  # theme.css and theme.js, respectively.
+  # Files are imported in the order they appear here, after theme.css and theme.js, respectively.
   css_modules = []
   js_modules = []
 
   # Description and meta data for the search engines
   author = "thedevopscat"
-  description = "Static1 Blog"
-  keywords = "blog,personal,responsive,cats,devops,terraform,search,font awesome,pages,posts,multilingual,highlight.js,syntax highlighting,premium,shortcuts"
+  description = "thedevopscat Blog"
+  keywords = "blog,personal,cats,devops,terraform,posts"
 
   # How many articles should be displayed at once?
   paginate = 7
@@ -45,6 +44,9 @@ disqusShortname = ""
 
   # Enable / Disable comments on the articles via commento
   # commentoJsURL = "https://commento.lednerb.de/js/commento.js"
+
+  # Enable Disqus comments 
+  disqusShortname = "thedevopscat"
 
   # Enable / Disable Giscus comments
   giscus             = false
@@ -77,10 +79,10 @@ disqusShortname = ""
 
   # Header configuration
     # your subtitle if you want to use any
-    subtitle = "The devopscat goes on an static website adventure..."
+    subtitle = "This is the personal blog site of the devopscat..."
 
     # if you want to use libravatar or gravatar for the header image
-    #avatarEmail = "code@lednerb.de"
+    #avatarEmail = "blog@thedevsopscat.co.uk"
 
     # set an path to the image file you want to use | overwrites avatar by email
     customImage = "images/davey.jpg"
@@ -96,7 +98,7 @@ disqusShortname = ""
     stickyNav = false
 
     # show a language chooser in the header
-    showHeaderLanguageChooser = true
+    showHeaderLanguageChooser = false
 
   # Content configuration
     # Enable an optional pinned page to display at the top of the index
