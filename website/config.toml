@@ -83,8 +83,7 @@ disqusShortname = ""
     #avatarEmail = "code@lednerb.de"
 
     # set an path to the image file you want to use | overwrites avatar by email
-    customImage = "/davey.jpg"
-	  #"https://avatars.githubusercontent.com/u/51438359?v=4"
+    customImage = "images/davey.jpg"
 
     # define the icon you want to use for the overlay for the customImage or avatar.
     overlayIcon = "fa-home"

@@ -1,5 +1,5 @@
 ---
-title: "About Bilberry"
+title: "About the Bilberry Theme"
 date: 2021-11-01T13:18:45+01:00
 excludeFromTopNav: false
 showDate: false
@@ -19,6 +19,6 @@ It is full of little nice features, such as:
     - easy configuration to add more according to your needs
 
 
-*This Bilberry theme is inspired by the Lingonberry theme from [Anders Norén](http://www.andersnoren.se/teman/lingonberry-wordpress-theme/)*
+*This Bilberry theme is inspired by the WordPress Lingonberry theme from [Anders Norén](http://www.andersnoren.se/teman/lingonberry-wordpress-theme/)*
 
-**[Further information at GitHub](https://github.com/Lednerb/bilberry-hugo-theme)**
+**[Further information at their GitHub](https://github.com/Lednerb/bilberry-hugo-theme)**
