@@ -23,5 +23,3 @@ Lizzy (stage name: OwlKitty) is a two year-old cat living in Portland, Oregon. S
 So far, OwlKitty has made appearances in such classics as Star Wars, Harry Potter, Jurassic Park, How to Train your Dragon, The Shining, Titanic, 50 Shades of Gray and Risky Business. You can also find her in Game of Thrones, The Lion king and Stranger Things
 
 Check out her [YouTube](https://www.youtube.com/@OwlKitty) channel!
-
-{{ template "_internal/disqus.html" . }}

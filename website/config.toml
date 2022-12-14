@@ -46,7 +46,7 @@ disqusShortname = ""
   # commentoJsURL = "https://commento.lednerb.de/js/commento.js"
 
   # Enable Disqus comments 
-  disqusShortname = "thedevopscat"
+  disqusShortname = 'thedevopscat'
 
   # Enable / Disable Giscus comments
   giscus             = false

@@ -16,3 +16,5 @@ peertube: ""        # https://vids.tekdmn.me/w/w7WGHX7Lb6mCrbrpF3Xb8V (entire UR
 mp4video: ""        # location of video file (only mp4) 
 mp4videoImage: ""   # location of poster image 
 ---
+
+{{ partial "disqus.html" . }}
