@@ -3,8 +3,9 @@
 
 provider "registry.terraform.io/hashicorp/azurerm" {
   version     = "3.32.0"
-  constraints = "~> 3.0"
+  constraints = "> 3.0.0"
   hashes = [
+    "h1:qVNIquevOeGjlDIBe+jB14mqcn4q7qBzdKBdLdyjGrI=",
     "h1:zjaayFSTUOxL0J0vE3MSPGbUNVxbUkQv76THmtrAM4Q=",
     "zh:3ee1992144e6bf9801c44df0ed1e10413fa83ad605e3ce751cb342dd46904c41",
     "zh:4f083079909f929b76c0cb2819b107803ecbf26c761832aaa1e7b4a667025665",

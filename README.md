@@ -96,9 +96,15 @@ az group create -n "${website_name}tfdata" -l $region
 az storage account create --name "${website_name}tfdata" --resource-group "${website_name}tfdata" \
   --location $region --sku Standard_LRS
 
+    #what I used for the above 
+    az storage account create --name "brentjayingramtfdata" --resource-group "tfdata" --location westus2 --sku Standard_LRS
+
 ## Create a storage account container
 az storage container create -n tfdata --account-name "${website_name}tfdata" \
   --resource-group "${website_name}tfdata"
+
+#what I'm using
+az storage container create -n tfdata --account-name "brentjayingramdevtfdata" --resource-group "brentjayingramdevtfdata"
 
 ## Set up backend config file
 cat << EOF > backend-config.txt
@@ -108,6 +114,16 @@ container_name="tfdata"
 
 EOF
 ```
+
+
+#what I'll use
+
+cat << EOF > backend-config.txt
+resource_group_name="brentjayingramdevtfdata"
+storage_account_name="brentjayingramdevtfdata"
+container_name="tfdata"
+
+EOF
 
 In the `terraform.tf` file uncomment the `backend` block so it looks like this:
 
