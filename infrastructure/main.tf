@@ -62,7 +62,7 @@ resource "azurerm_dns_txt_record" "txt" {
 }
 
 resource "azurerm_dns_txt_record" "txt1" {
-  name                = var.custom_domain_name
+  name                = "@"
   zone_name           = azurerm_dns_zone.swa.name
   resource_group_name = azurerm_resource_group.swa.name
   ttl                 = 300
@@ -81,7 +81,7 @@ resource "azurerm_dns_a_record" "alias" {
 }
 
 resource "azurerm_dns_a_record" "alias1" {
-  name                = var.custom_domain_name
+  name                = "@"
   zone_name           = azurerm_dns_zone.swa.name
   resource_group_name = azurerm_resource_group.swa.name
   ttl                 = 300
