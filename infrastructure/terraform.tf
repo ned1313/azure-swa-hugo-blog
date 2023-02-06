@@ -6,7 +6,11 @@ terraform {
     }
   }
 
-  backend "azurerm" {
-    key = "terraform.tfstate"
+  cloud {
+    organization = "mjftech"
+
+    workspaces {
+      name = "azure-swa-hugo-blog"
+    }
   }
 }

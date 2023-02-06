@@ -1,4 +1,0 @@
-resource_group_name="10bitpodcastcomtfdata"
-storage_account_name="10bitpodcastcomtfdata"
-container_name="tfdata"
-
