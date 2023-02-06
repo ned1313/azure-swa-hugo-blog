@@ -1,4 +1,4 @@
-baseURL = 'https://10bitpodcast.com/'
+baseURL = 'https://fiederlein.net'
 languageCode = 'en-us'
-title = '10 Bit Podcast'
+title = 'Fiederlein.net'
 theme = 'ananke'
