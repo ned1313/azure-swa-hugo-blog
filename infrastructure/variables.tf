@@ -36,3 +36,7 @@ variable "custom_domain_name" {
   type        = string
   description = "(Required) The domain you'll be using for the SWA"
 }
+
+variable "rg_dns" {
+  default = "example-resources"
+}

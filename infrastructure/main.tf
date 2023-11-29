@@ -38,17 +38,17 @@ resource "azurerm_static_site_custom_domain" "txt" {
 
 # Azure DNS
 
-resource "azurerm_dns_zone" "swa" {
+data "azurerm_dns_zone" "swa" {
   name                = var.custom_domain_name
-  resource_group_name = azurerm_resource_group.swa.name
-  tags                = var.common_tags
+  resource_group_name = var.rg_dns
+  #tags                = var.common_tags
 
 }
 
 resource "azurerm_dns_txt_record" "txt" {
   name                = local.hostname
-  zone_name           = azurerm_dns_zone.swa.name
-  resource_group_name = azurerm_resource_group.swa.name
+  zone_name           = data.azurerm_dns_zone.swa.name
+  resource_group_name = var.rg_dns
   ttl                 = 300
   record {
     # Conditional required due to issue https://github.com/hashicorp/terraform-provider-azurerm/issues/14750
@@ -58,8 +58,8 @@ resource "azurerm_dns_txt_record" "txt" {
 
 resource "azurerm_dns_a_record" "alias" {
   name                = local.hostname
-  zone_name           = azurerm_dns_zone.swa.name
-  resource_group_name = azurerm_resource_group.swa.name
+  zone_name           = data.azurerm_dns_zone.swa.name
+  resource_group_name = var.rg_dns
   ttl                 = 300
   target_resource_id  = azurerm_static_site.swa.id
 }

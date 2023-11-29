@@ -4,5 +4,5 @@ output "api_token" {
 }
 
 output "name_servers" {
-  value = azurerm_dns_zone.swa.name_servers
+  value = data.azurerm_dns_zone.swa.name_servers
 }
